@@ -1,0 +1,103 @@
+---
+layout: default
+title: Workspace Endpoint
+---
+<h1>Workspace Endpoint</h1>
+
+<h2>Get</h2>
+<p>This method returns a Wrokspace.</p>
+
+<p><span class="label label-warning">Get</span><strong>/api/navigationcards/{workspaceid}</strong></p>
+
+<p>The URL must have the workspace Id. It returns a NavigationCard (Workspace).</p>
+
+<p>Microsoft.NET example:</p>
+<pre>
+NavigationCard card = serviceManager.NavigationCard.Get(22);
+</pre>
+
+<p>JavaScript example:</p>
+<pre>
+var geminiUrl = "http://localhost/gemini/api/navigationcards/22";
+var geminiUsername = Base64.encode("manager:xvitjc5bmm"); // user : apikey
+
+$.ajax({
+    url: geminiUrl,
+    type: "GET",
+    headers: { "Authorization": "Basic " + geminiUsername },
+    success: function (data) {
+      alert('Success!');
+    }
+});
+</pre>
+ 
+ <h2>Get User's Workspaces</h2>
+<p>This method returns a collection of Worksapces.</p>
+
+<p><span class="label label-warning">Get</span><strong>/api/navigationcards/users/{userid}</strong></p>
+
+<p>The URL must have the user Id. It returns a List of NavigationCards (Workspaces) for the user.</p>
+
+<p>Microsoft.NET example:</p>
+<pre>
+List<NavigationCard> card = serviceManager.NavigationCard.GetByUser(1);
+</pre>
+
+<p>JavaScript example:</p>
+<pre>
+var geminiUrl = "http://localhost/gemini/api/navigationcards/users/1";
+var geminiUsername = Base64.encode("manager:xvitjc5bmm"); // user : apikey
+
+$.ajax({
+    url: geminiUrl,
+    type: "GET",
+    headers: { "Authorization": "Basic " + geminiUsername },
+    success: function (data) {
+      alert('Success!');
+    }
+});
+</pre>
+ 
+<h2>Update</h2>
+<p>This method updates an existing workspace.</p>
+
+<p><span class="label label-warning">PUT</span><strong>/api/admin/appnav/update</strong></p>
+
+<p>The request body must contain the NavigationCard Entity including the Id. The return value is a NavigationCard Entity.</p>
+
+<p>Microsoft.NET example:</p>
+<pre>
+NavigationCard card = new NavigationCard();
+
+card.Id = 18;
+card.ProjectId = 17;
+card.Title = "Urgent Issues";
+card.UserId = 1;
+card.Key = "ALL";
+
+serviceManager.Admin.UpdateAppNavCard(card);
+</pre>
+
+<p>JavaScript example:</p>
+<pre>
+var geminiUrl = "http://localhost/gemini/api/admin/appnav/update";
+var geminiLogin = Base64.encode("manager:xvitjc5bmm"); // user:apikey
+
+var geminiData = {       
+    ProjectId: "17",
+    id: "18",
+    Title: "Urgent Issues",
+    UserId: "1",
+    Key: "ALL"            
+};
+
+$.ajax({
+    url: geminiUrl,
+    type: "PUT",
+    data: geminiProject,
+    headers: { "Authorization": "Basic " + geminiLogin },
+    success: function (data) {
+      alert('Success!');
+    }
+});
+</pre>
