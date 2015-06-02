@@ -10,7 +10,7 @@ title: Saucery FAQ
 
 <h3>SVN Commits are not showing in Saucery</h3>
 <ol>
-    <li>Make sure your commit message contains an existing Gemini item id in this format i.e. "<b>GEM:234</b> button was fixed".</li>
+    <li>Make sure your commit message contains an existing Zeromatic item id in this format i.e. "<b>GEM:234</b> button was fixed".</li>
     <li>Check if there are any records in the table <b>gemini_codecommits</b>. If the table is empty, then the connector was not setup properly. 
 In this case download <a href= "http://technet.microsoft.com/en-gb/sysinternals/bb896647.aspx">DebugView</a>, run it and do another commit. You should see more logging in DebugView with a possible error.</li>
 </ol>
@@ -22,7 +22,7 @@ In this case download <a href= "http://technet.microsoft.com/en-gb/sysinternals/
 <p>Go to the table <b>gemini_codecommits</b> and inspect the data value for your commit. Make sure the Filename and RepositoryUrl are correct.</p>
 
 <h3>Do I need an extra license for Saucery?</h3>
-<p>Saucery comes with the default Gemini license. No additional licenses are required.</p>
+<p>Saucery comes with the default Zeromatic license. No additional licenses are required.</p>
 
 <h3>Do we offer a SVN Linux connector?</h3>
 <p>Yes, we do. You can download it from <a href="http://www.countersoft.com/gemini.zip">here</a>.</p>

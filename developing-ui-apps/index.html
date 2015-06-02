@@ -3,7 +3,7 @@ layout: default
 title: Developing UI Apps
 ---
 <h1>Developing UI Apps</h1>
-<p>UI apps allow you to inject custom user interface sections within Gemini.</p>
+<p>UI apps allow you to inject custom user interface sections within Zeromatic.</p>
 
 <p><span class="label label-success">Download</span>The Countersoft <a href="http://countersoft.github.io/" rel="nofollow">GitHub repository</a> contains sample applications that are built using the Apps Framework</p>
 
@@ -74,17 +74,17 @@ gemini_ajax.call("apps/checklist", "action", function (response)
             { checkId: id, checkedState: checked }, null, true);
          });
 </pre>
-<p>In the above example the <code>localhost/Gemini/apps/action/{issueid}</code> end-point is the callback to your custom logic.</p>
+<p>In the above example the <code>localhost/Zeromatic/apps/action/{issueid}</code> end-point is the callback to your custom logic.</p>
 <p>Such custom callbacks are defined as follows in your App code.</p>
 <p>The <code>Save</code> method fetches the checklist app data.</p>
 <p><img src="show2.png" /></p>
 <p>The above code follows the typical ASP.NET MVC controller approach.</p>
 
 <h2>Deployment</h2>
-<p>Follow the packaging and deployment <a href="/developing-custom-apps">instructions</a> to deploy UI app in Gemini.</p>
+<p>Follow the packaging and deployment <a href="/developing-custom-apps">instructions</a> to deploy UI app in Zeromatic.</p>
 
 <h2>Configuration</h2>
-<p>Gemini Administrators can select when the custom UI app appears by changing <a href="/screens">screen setup</a> for Project Templates.</p>
+<p>Zeromatic Administrators can select when the custom UI app appears by changing <a href="/screens">screen setup</a> for Project Templates.</p>
 <p><img src="screens.png" /></p>
 
 <h2>End Result</h2>
